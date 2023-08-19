@@ -107,7 +107,7 @@ devForm.addEventListener("submit", function (event) {
     technologies.push({ name: techName, exp: techExp });
   });
 
-  const newDev = { fullname: nameDev.value, technologies: technologies };
+  const newDev = { nameDev: nameDev.value, technologies: technologies };
   devs.push(newDev);
   alert("Dev cadastrado com sucesso!");
 
