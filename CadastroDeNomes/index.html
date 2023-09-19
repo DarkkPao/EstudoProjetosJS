@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Cadastro de Pessoas</title>
+
+</head>
+
+<body>
+    <label>Número de pessoas cadastradas:</label>
+    <label id="registerCounter">0</label>
+
+    <div id="cadastroSection">
+        <h2>Cadastro de Pessoas</h2>
+        <label for="name">Nome:</label>
+        <input type="text" name="name" id="name" placeholder="Seu nome"><br>
+        <label for="CPF">CPF:</label>
+        <input type="number" name="CPF" id="CPF" placeholder="Seu CPF"><br>
+        <label for="address">Endereço:</label>
+        <input type="text" name="address" id="address" placeholder="Seu endereço"><br>
+        <button id="registerBtn">Cadastrar</button><br><br>
+    </div>
+
+    <hr id="deleteSection">
+    <h2>Apagar pelo CPF</h2>
+    <label for="delete">Digite o CPF:</label>
+    <input type="number" name="delete" id="delete" placeholder="CPF para apagar"><br>
+    <button id="deleteBtn">Apagar</button><br><br>
+    </hr>
+
+    <hr id="infoSection">
+    <h2>Pesquisar pelo CPF</h2>
+    <label for="searchCPF">Digite o CPF:</label>
+    <input type="number" name="searchCPF" id="searchCPF" placeholder="CPF para Pesquisar"><br>
+    <button id="searchBtn">Pesquisar</button><br><br>
+    </hr>
+
+    <ul id="personList">
+        <li id="nameLi"></li>
+        <li id="cpfLi"></li>
+        <li id="addressLi"></li>
+
+    </ul>
+
+</body>
+
+</html>

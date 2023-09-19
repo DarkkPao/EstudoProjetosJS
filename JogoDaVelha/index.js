@@ -97,7 +97,7 @@ function handleWin(regions) {
   document.querySelector("h2").innerHTML = playerName + " venceu!";
 }
 
-function handleBoardClick(ev) {
+function handleBoardClick(ev)  {
   // Obtém os índices da região clicada
   const span = ev.currentTarget;
   const region = span.dataset.region; // N.N
