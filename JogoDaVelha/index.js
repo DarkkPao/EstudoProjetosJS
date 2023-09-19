@@ -128,5 +128,7 @@ function handleBoardClick(ev) {
     document.querySelector("h2").innerHTML = "Empate!";
   }
 }
+
+
 // Adiciona o evento no botão que inicia o jogo
 document.getElementById("start").addEventListener("click", initializeGame);
