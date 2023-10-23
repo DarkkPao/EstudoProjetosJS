@@ -1,5 +1,7 @@
-const main = document.querySelector("main");
-const root = document.querySelector(":root");
+import calculate from "./calculate.js";
+import copy from "./copy.js";
+import switchTheme from "./switchTheme.js";
+
 const input = document.getElementById("input");
 const resultInput = document.getElementById("result");
 
@@ -64,47 +66,8 @@ input.addEventListener("keydown", function (ev) {
 // Calcula
 document.getElementById("equal").addEventListener("click", calculate);
 
-function calculate() {
-  resultInput.value = "ERROR";
-  resultInput.classList.add("error");
-
-  const result = eval(input.value); //Eval avalia o codigo JS e executa o codigo
-
-  resultInput.value = result;
-  resultInput.classList.remove("error");
-}
-
 // Botão Copy
-document
-  .getElementById("copyToClipboard")
-  .addEventListener("click", function (ev) {
-    const copyBtn = ev.currentTarget;
-    if (copyBtn.innerText === "Copy") {
-      copyBtn.innerText = "Copied!";
-      copyBtn.classList.add("success");
-      navigator.clipboard.writeText(resultInput.value);
-
-      // Aguarda 1 segundo (1000 milissegundos) para restaurar o texto
-      setTimeout(function () {
-        copyBtn.innerText = "Copy";
-        copyBtn.classList.remove("success");
-      }, 1000);
-    }
-  });
+document.getElementById("copyToClipboard").addEventListener("click", copy);
 
 // Troca o tema da aplicação
-document.getElementById("themeSwitcher").addEventListener("click", function () {
-  if (main.dataset.theme === "dark") {
-    root.style.setProperty("--bg-color", "#f1f5f9");
-    root.style.setProperty("--border-color", "#aaa");
-    root.style.setProperty("--font-color", "#212529");
-    root.style.setProperty("--primary-color", "#26834a");
-    main.dataset.theme = "light";
-  } else {
-    root.style.setProperty("--bg-color", "#212529");
-    root.style.setProperty("--border-color", "#666");
-    root.style.setProperty("--font-color", "#f1f5f9");
-    root.style.setProperty("--primary-color", "#4dff91");
-    main.dataset.theme = "dark";
-  }
-});
+document.getElementById("themeSwitcher").addEventListener("click", switchTheme);
